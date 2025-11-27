@@ -34,5 +34,20 @@ namespace BibliotecaMonitoreo
             return Math.Round(humo, 1);
         }
 
+        public string Diagnosticar(int temperatura, double humo)
+        {
+            if (temperatura < 40 && humo < 30)
+            {
+                return "Condiciones normales.";
+            }
+            else if ((temperatura >= 40 && temperatura < 60) || (humo >= 30 && humo < 60))
+            {
+                return "Advertencia: temperatura o humo elevados.";
+            }
+            else
+            {
+                return "PELIGRO: Riesgo de incendio detectado.";
+            }
+        }
     }
 }
