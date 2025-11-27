@@ -49,5 +49,77 @@ namespace BibliotecaMonitoreo
                 return "PELIGRO: Riesgo de incendio detectado.";
             }
         }
+        public void MostrarDatos(string zona)
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("MONITOREANDO " + zona + "...");
+            Console.ResetColor();
+            Console.WriteLine("----------------------------------------------");
+
+            int temperatura = ObtenerTemperatura();
+            double humo = ObtenerHumo(temperatura);
+            string diagnostico = Diagnosticar(temperatura, humo);
+
+            Console.Write("Temperatura: ");
+            if (temperatura >= 60)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+            }
+            else if (temperatura >= 40)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+            }
+            Console.WriteLine(temperatura + " °C");
+            Console.ResetColor();
+
+            Console.Write("Nivel de humo: ");
+            if (humo >= 60)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+            }
+            else if (humo >= 30)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+            }
+            Console.WriteLine(humo + "%");
+            Console.ResetColor();
+
+            Console.WriteLine("----------------------------------------------");
+
+            if (diagnostico.Contains("PELIGRO"))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(diagnostico);
+                Console.ResetColor();
+                AlertaSonoraCritica();
+            }
+            else if (diagnostico.Contains("Advertencia"))
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine(diagnostico);
+                Console.ResetColor();
+                AlertaSonoraAdvertencia();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine(diagnostico);
+                Console.ResetColor();
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Presione una tecla para volver al menú...");
+            Console.ReadKey();
+        }
+
     }
 }
