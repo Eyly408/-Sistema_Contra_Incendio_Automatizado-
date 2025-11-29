@@ -1,0 +1,6 @@
+C:\Users\Asus\source\repos\Biblioteca Alertas\Biblioteca Alertas\bin\Debug\Biblioteca Alertas.dll
+C:\Users\Asus\source\repos\Biblioteca Alertas\Biblioteca Alertas\bin\Debug\Biblioteca Alertas.pdb
+C:\Users\Asus\source\repos\Biblioteca Alertas\Biblioteca Alertas\obj\Debug\Biblioteca Alertas.csproj.AssemblyReference.cache
+C:\Users\Asus\source\repos\Biblioteca Alertas\Biblioteca Alertas\obj\Debug\Biblioteca Alertas.csproj.CoreCompileInputs.cache
+C:\Users\Asus\source\repos\Biblioteca Alertas\Biblioteca Alertas\obj\Debug\Biblioteca Alertas.dll
+C:\Users\Asus\source\repos\Biblioteca Alertas\Biblioteca Alertas\obj\Debug\Biblioteca Alertas.pdb
