@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace BibliotecaMonitoreo
@@ -120,6 +121,27 @@ namespace BibliotecaMonitoreo
             Console.WriteLine("Presione una tecla para volver al menú...");
             Console.ReadKey();
         }
+        public void AlertaSonoraAdvertencia()
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                Console.Beep(700, 250);
+                Thread.Sleep(120);
+            }
+        }
 
+        public void AlertaSonoraCritica()
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                Console.Beep(1000, 300);
+                Thread.Sleep(150);
+                Console.Beep(800, 300);
+                Thread.Sleep(150);
+            }
+        }
     }
 }
+
+    
+
